@@ -31,7 +31,7 @@
     <h1 class="teamscore" id="t2-score">0</h1>
   </div>
 
-    <a href="" class="gamereset">reset Match</a>
+    <a href="reset" class="gamereset">reset Match</a>
 
 
   <script src="/socket.io/socket.io.js"></script>
@@ -40,9 +40,10 @@
     var socket = io('http://foospi.local:3000/');
 
     socket.on('score', function (data) {
+      console.log(data);
       goal.play();
-      document.getElementById("t1-score").innerText = data.blue;
-      document.getElementById("t2-score").innerText = data.red;
+      document.getElementById("t1-score").innerText = data[1].score;
+      document.getElementById("t2-score").innerText = data[0].score;
     });
   </script>
 </body>

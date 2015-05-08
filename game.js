@@ -59,4 +59,9 @@ Game.prototype.summary = function() {
 	});
 };
 
+Game.prototype.reset = function() {
+	this.start();
+	this.emit('goal');
+}
+
 module.exports = Game;
