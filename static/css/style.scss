@@ -20,15 +20,19 @@ body {
   font-family: 'MunroSmall' !important;
 }
 
+h1, h2, h3, h4, h5{
+    padding: 0;
+  margin: 0;
+}
+
 .team {
   width: 50%;
   height: 100%;
   position: absolute;
   color: white;
-  font-size: 200px;
+
   text-align: center;
-  line-height: 100px;
-  text-shadow: 20px 20px #000000;
+
 }
 
 .team-1 {
@@ -38,4 +42,36 @@ body {
 .team-2 {
   left: 50%;
   background: $REDCOLOUR;
+}
+
+// .teamname {
+//   font-size: 80px;
+//   padding-left: 10%;
+//   text-align: left;
+//   text-shadow: 5px 5px #000;
+// }
+
+.teaminfo {
+  position:absolute;
+  font-size: 40px;
+  padding-left: 10%;
+  padding-right: 40px;
+  text-align: left;
+  text-shadow: 5px 5px #000;
+  top:0;
+  top: 10%;
+  background: darken($BLUECOLOUR, 20%);
+}
+
+.teamscore {
+  position: absolute;
+  font-size: 300px;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: -200px;
+  width: 400px;
+  text-shadow: 20px 20px #000000;
+  text-align: center;
+  // background: #8a8;
 }
