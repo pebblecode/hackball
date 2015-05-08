@@ -8,12 +8,18 @@ var Game = require('./game');
 var match = new Game('red', 'blue');
 
 match.init().then(function () {
-  app.use(express.static('static'));
-  server.listen(3000);
+  console.log('ready');
+});
+
+match.on('goal', function(team) {
+	console.log(match.summary());
+	io.emit('goal', match.summary());
 });
 
 // give new connections the latest score
 io.on('connection', function (socket) {
-  socket.emit('score', score);
+  socket.emit('goal', match.summary());
 });
 
+app.use(express.static('static'));
+server.listen(3000);

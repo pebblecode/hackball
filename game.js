@@ -32,14 +32,26 @@ function Game(player1, player2) {
 util.inherits(Game, events.EventEmitter);
 
 Game.prototype.init = function() {
+  var _this = this;
+
   return Q.Promise(function (resolve) {
     setInterval(function () {
-      if (this.teams.every(function (team) { return team.ready; })) {
+      if (_this.teams.every(function (team) { return team.ready; })) {
+				_this.startTime = Date.now();
         resolve();
       }
     }, 100);
   });
 };
+
+Game.prototype.summary = function() {
+	return this.teams.map(function (team) {
+		return { 
+			name: team.name,
+			score: team.score
+		};
+	});
+}
 
 Game.prototype.restart = function() {
   this.teams.forEach(function (team) {
