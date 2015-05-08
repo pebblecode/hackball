@@ -2,6 +2,12 @@ var gpio = require('rpi-gpio');
 var util = require('util');
 var events = require('events');
 
+
+function changed(previous, next, lastChanged, delay) {
+  return (previous !== next) &&
+         (Date.now() - lastChanged >= delay);
+}
+
 /**
  * Listen for a pin
  * @param {Object} config
@@ -23,22 +29,27 @@ util.inherits(Listener, events.EventEmitter);
 
 Listener.prototype.read = function() {
   var _this = this;
-  var prev = -1;
-  var lastChanged = Date.now();
+  var previous = -1;
+  var changeTime = Date.now();
 
   setInterval(function () {
     gpio.read(_this.pin, function (err, val) {
       _this.emit('data', val);
 
       if (err) _this.emit('error', err);
-      
-		  // todo: broadcast change      
+
+      if (previous === -1 || changed(previous, val, changeTime, _this.delay)) {
+        changeTime = Date.now();
+        _this.emit('change', val);
+      }
+
+      previous = val;
     });
   }, this.interval);
 };
 
 
-module.exports = function(pin) {
-  return new Listener(pin);
+module.exports = function(config) {
+  return new Listener(config);
 };
 
