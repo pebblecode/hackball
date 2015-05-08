@@ -38,7 +38,7 @@ Listener.prototype.read = function() {
 
       if (err) _this.emit('error', err);
 
-      if (previous === -1 || changed(previous, val, changeTime, _this.delay)) {
+      if (changed(previous, val, changeTime, _this.delay)) {
         changeTime = Date.now();
         _this.emit('change', val);
       }
