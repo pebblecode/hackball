@@ -1,11 +1,7 @@
-var gpio = require('rpi-gpio');
-var pins = [15, 16];
+var listener = require('./listener');
 
-pins.forEach(function (pin) {
-  gpio.setup(pin);
+var pin22 = listener({ pin: 22 });
+
+pin22.on('change', function() {
+	console.log('pin 22 changed');
 });
-
-gpio.on('change', function (channel, value) {
-	console.log('Channel ' + channel + ' value is now ' + value);
-});
-
