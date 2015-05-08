@@ -15,23 +15,10 @@
 
 <body>
 
-
-
-  <div class="team-1 team">
-    <div class="t1-info teaminfo">
-      <h2 class="t1-team teamname">Cantona</h2>
-    </div>
-    <h1 class="teamscore" id="t1-score">1</h1>
+  <div class="gamestart">
+    <h1 class="intro-title">Hackball Pebbleague</h1>
+    <a class="intro-buttons" href="">Start Match</a>
   </div>
-
-  <div class="team-2 team">
-    <div class="t2-info teaminfo">
-      <h2 class="t2-team teamname">Beardsly</h2>
-    </div>
-    <h1 class="teamscore" id="t2-score">0</h1>
-  </div>
-
-    <a href="" class="gamereset">reset Match</a>
 
 
   <script src="/socket.io/socket.io.js"></script>
@@ -43,6 +30,7 @@
       goal.play();
       document.getElementById("t1-score").innerText = data.blue;
       document.getElementById("t2-score").innerText = data.red;
+
     });
   </script>
 </body>

@@ -1,5 +1,6 @@
 $REDCOLOUR: #c2240c;
 $BLUECOLOUR: #005397;
+$PEBBLEPINK: #ee4f7e;
 
 @font-face {
   font-family: 'MunroSmall';
@@ -23,6 +24,11 @@ body {
 h1, h2, h3, h4, h5{
     padding: 0;
   margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: none;
 }
 
 .team {
@@ -74,4 +80,110 @@ h1, h2, h3, h4, h5{
   text-shadow: 20px 20px #000000;
   text-align: center;
   // background: #8a8;
+}
+
+
+.gamereset{
+  position: absolute;
+  bottom: 20px;
+  width: 400px;
+  left: 50%;
+  text-align: center;
+  margin-left: -200px;
+  font-size: 60px;
+  background: #000;
+  // border-radius: 15px;
+  color: #fff;
+  &:hover{
+    color: #888;
+  }
+}
+
+.gamestart{
+  width: 100%;
+  height: 100%;
+  background: #ee4f7e;
+  color: white;
+  text-align: center;
+}
+
+// Rainbow
+// $color1:#f80c12;
+// $color2:#feae2d;
+// $color3:#69d025;
+// $color4:#11aabb;
+// $color5:#3311bb;
+// $color6:#442299;
+
+$shadecolor: $PEBBLEPINK;
+
+$color1:darken($shadecolor, 5%);
+$color2:darken($shadecolor, 10%);
+$color3:darken($shadecolor, 15%);
+$color4:darken($shadecolor, 20%);
+$color5:darken($shadecolor, 25%);
+$color6:darken($shadecolor, 30%);
+
+
+@-webkit-keyframes example {
+    0%   {text-shadow: 5px 5px $color1, 10px 10px $color2, 15px 15px $color3, 20px 20px $color4, 25px 25px $color5, 30px 30px $color6;}
+    20%   {text-shadow: 5px 5px $color2, 10px 10px $color3, 15px 15px $color4, 20px 20px $color5, 25px 25px $color6, 30px 30px $color1;}
+    40%   {text-shadow: 5px 5px $color3, 10px 10px $color4, 15px 15px $color5, 20px 20px $color6, 25px 25px $color1, 30px 30px $color2;}
+    60%   {text-shadow: 5px 5px $color4, 10px 10px $color5, 15px 15px $color6, 20px 20px $color1, 25px 25px $color2, 30px 30px $color3;}
+    80%   {text-shadow: 5px 5px $color5, 10px 10px $color6, 15px 15px $color1, 20px 20px $color2, 25px 25px $color3, 30px 30px $color4;}
+    90%   {text-shadow: 5px 5px $color6, 10px 10px $color1, 15px 15px $color2, 20px 20px $color3, 25px 25px $color4, 30px 30px $color5;}
+    100%   {text-shadow: 5px 5px $color6, 10px 10px $color1, 15px 15px $color2, 20px 20px $color3, 25px 25px $color4, 30px 30px $color5;}
+  }
+
+
+
+/* Chrome, Safari, Opera */
+// @-webkit-keyframes example {
+//     0%   {text-shadow: 5px 5px $color1, 10px 10px $color2, 15px 15px $color3, 20px 20px $color4, 25px 25px $color5, 30px 30px $color6;}
+//     25%   {text-shadow: -5px 5px $color1, -10px 10px $color2, -15px 15px $color3, -20px 20px $color4, -25px 25px $color5, -30px 30px $color6;}
+//     50%   {text-shadow: -5px -5px $color1, -10px -10px $color2, -15px -15px $color3, -20px -20px $color4, -25px -25px $color5, -30px -30px $color6;}
+//     75%   {text-shadow: 5px -5px $color1, 10px -10px $color2, 15px -15px $color3, 20px -20px $color4, 25px -25px $color5, 30px -30px $color6;}
+//     100%   {text-shadow: 5px 5px $color1, 10px 10px $color2, 15px 15px $color3, 20px 20px $color4, 25px 25px $color5, 30px 30px $color6;}
+//   }
+/* The animation code */
+@keyframes example {
+    0%   {text-shadow: 5px 5px $color1, 10px 10px $color2, 15px 15px $color3, 20px 20px $color4, 25px 25px $color5, 30px 30px $color6;}
+    25%   {text-shadow: -5px 5px $color1, -10px 10px $color2, -15px 15px $color3, -20px 20px $color4, -25px 25px $color5, -30px 30px $color6;}
+    50%   {text-shadow: -5px -5px $color1, -10px -10px $color2, -15px -15px $color3, -20px -20px $color4, -25px -25px $color5, -30px -30px $color6;}
+    75%   {text-shadow: 5px -5px $color1, 10px -10px $color2, 15px -15px $color3, 20px -20px $color4, 25px -25px $color5, 30px -30px $color6;}
+    100%   {text-shadow: 5px 5px $color1, 10px 10px $color2, 15px 15px $color3, 20px 20px $color4, 25px 25px $color5, 30px 30px $color6;}
+}
+
+
+
+
+.intro-title {
+  font-size: 200px;
+  text-shadow:  15px 15px #000000;
+
+   -webkit-animation: example 2s infinite linear; /* Safari 4+ */
+  -moz-animation:    example 2s infinite linear; /* Fx 5+ */
+  -o-animation:      example 2s infinite linear; /* Opera 12+ */
+  animation: example 2s infinite linear;
+
+}
+
+.intro-buttons{
+  color: #fff;
+  // bottom: 20px;
+  width: 400px;
+  left: 50%;
+  text-align: center;
+  margin-left: -220px;
+  font-size: 60px;
+  background: #000;
+  // float: left;
+  // margin: auto;
+  padding: 20px;
+  bottom: 250px;
+  display: block;
+  position: absolute;
+
+  // text-shadow:  5px 5px #888;
+  border: 12px solid #888;
 }

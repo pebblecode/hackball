@@ -16,6 +16,10 @@ h1, h2, h3, h4, h5 {
   padding: 0;
   margin: 0; }
 
+a {
+  text-decoration: none;
+  color: none; }
+
 .team {
   width: 50%;
   height: 100%;
@@ -51,5 +55,78 @@ h1, h2, h3, h4, h5 {
   width: 400px;
   text-shadow: 20px 20px #000000;
   text-align: center; }
+
+.gamereset {
+  position: absolute;
+  bottom: 20px;
+  width: 400px;
+  left: 50%;
+  text-align: center;
+  margin-left: -200px;
+  font-size: 60px;
+  background: #000;
+  color: #fff; }
+  .gamereset:hover {
+    color: #888; }
+
+.gamestart {
+  width: 100%;
+  height: 100%;
+  background: #ee4f7e;
+  color: white;
+  text-align: center; }
+
+@-webkit-keyframes example {
+  0% {
+    text-shadow: 5px 5px #ec386d, 10px 10px #ea205c, 15px 15px #db1550, 20px 20px #c41347, 25px 25px #ad113f, 30px 30px #960e36; }
+  20% {
+    text-shadow: 5px 5px #ea205c, 10px 10px #db1550, 15px 15px #c41347, 20px 20px #ad113f, 25px 25px #960e36, 30px 30px #ec386d; }
+  40% {
+    text-shadow: 5px 5px #db1550, 10px 10px #c41347, 15px 15px #ad113f, 20px 20px #960e36, 25px 25px #ec386d, 30px 30px #ea205c; }
+  60% {
+    text-shadow: 5px 5px #c41347, 10px 10px #ad113f, 15px 15px #960e36, 20px 20px #ec386d, 25px 25px #ea205c, 30px 30px #db1550; }
+  80% {
+    text-shadow: 5px 5px #ad113f, 10px 10px #960e36, 15px 15px #ec386d, 20px 20px #ea205c, 25px 25px #db1550, 30px 30px #c41347; }
+  90% {
+    text-shadow: 5px 5px #960e36, 10px 10px #ec386d, 15px 15px #ea205c, 20px 20px #db1550, 25px 25px #c41347, 30px 30px #ad113f; }
+  100% {
+    text-shadow: 5px 5px #960e36, 10px 10px #ec386d, 15px 15px #ea205c, 20px 20px #db1550, 25px 25px #c41347, 30px 30px #ad113f; } }
+/* Chrome, Safari, Opera */
+/* The animation code */
+@keyframes example {
+  0% {
+    text-shadow: 5px 5px #ec386d, 10px 10px #ea205c, 15px 15px #db1550, 20px 20px #c41347, 25px 25px #ad113f, 30px 30px #960e36; }
+  25% {
+    text-shadow: -5px 5px #ec386d, -10px 10px #ea205c, -15px 15px #db1550, -20px 20px #c41347, -25px 25px #ad113f, -30px 30px #960e36; }
+  50% {
+    text-shadow: -5px -5px #ec386d, -10px -10px #ea205c, -15px -15px #db1550, -20px -20px #c41347, -25px -25px #ad113f, -30px -30px #960e36; }
+  75% {
+    text-shadow: 5px -5px #ec386d, 10px -10px #ea205c, 15px -15px #db1550, 20px -20px #c41347, 25px -25px #ad113f, 30px -30px #960e36; }
+  100% {
+    text-shadow: 5px 5px #ec386d, 10px 10px #ea205c, 15px 15px #db1550, 20px 20px #c41347, 25px 25px #ad113f, 30px 30px #960e36; } }
+.intro-title {
+  font-size: 200px;
+  text-shadow: 15px 15px #000000;
+  -webkit-animation: example 2s infinite linear;
+  /* Safari 4+ */
+  -moz-animation: example 2s infinite linear;
+  /* Fx 5+ */
+  -o-animation: example 2s infinite linear;
+  /* Opera 12+ */
+  animation: example 2s infinite linear; }
+
+.intro-buttons {
+  color: #fff;
+  width: 400px;
+  left: 50%;
+  text-align: center;
+  margin-left: -220px;
+  font-size: 60px;
+  background: #000;
+  padding: 20px;
+  bottom: 250px;
+  display: block;
+  position: absolute;
+  border: 12px solid #888; }
 
 /*# sourceMappingURL=style.css.map */
