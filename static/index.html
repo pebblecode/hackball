@@ -30,12 +30,13 @@
 <body>
   <script src="/socket.io/socket.io.js"></script>
   <script>
+    var goal = new Audio('sound/goaal.mp3');
     var socket = io('http://foospi.local:3000/');
-    socket.on('score', function (data) {
-      console.log(data);
 
-      document.getElementById("t1-score").innerText = data.t1;
-      document.getElementById("t2-score").innerText = data.t2;
+    socket.on('score', function (data) {
+      goal.play();
+      document.getElementById("t1-score").innerText = data.blue;
+      document.getElementById("t2-score").innerText = data.red;
 
     });
   </script>
