@@ -11,6 +11,8 @@
   "dependencies": {
     "express": "^4.12.3",
     "pinhead": "^1.1.0",
-    "rpi-gpio": "^0.5.1"
+    "q": "^1.3.0",
+    "rpi-gpio": "^0.5.1",
+    "socket.io": "^1.3.5"
   }
 }
