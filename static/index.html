@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Football Score sockets</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+
+</head>
+
+  <div class="team-1 team">
+    <h1 id="t1-score">0</h1>
+  </div>
+
+  <div class="team-2 team">
+    <h1 id="t2-score">0</h1>
+  </div>
+
+<body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io('http://foospi.local:3000/');
+    socket.on('score', function (data) {
+      console.log(data);
+
+      document.getElementById("t1-score").innerText = data.t1;
+      document.getElementById("t2-score").innerText = data.t2;
+
+    });
+  </script>
+</body>
+</html>
