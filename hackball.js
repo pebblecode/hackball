@@ -23,3 +23,11 @@ io.on('connection', function (socket) {
 
 app.use(express.static('static'));
 server.listen(3000);
+
+
+app.get('/', function(req, res) {
+  if (!match.started) {
+    return res.sendFile('./static/gamestart.html');
+  }
+  return res.sendFile('./static/index.html');
+});

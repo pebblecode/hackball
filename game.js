@@ -21,7 +21,7 @@ function Team(name, pin, game) {
 }
 
 function Game(player1, player2) {
-  this.playing = false;
+  this.started = false;
   this.teams = [
     new Team(player1, 22, this),
     new Team(player2, 11, this)
@@ -37,26 +37,26 @@ Game.prototype.init = function() {
   return Q.Promise(function (resolve) {
     setInterval(function () {
       if (_this.teams.every(function (team) { return team.ready; })) {
-				_this.startTime = Date.now();
+        _this.ready = true;
         resolve();
       }
     }, 100);
   });
 };
 
+Game.prototype.start = function() {
+  this.teams.forEach(function (team) { team.score = 0; });
+  this.startTime = Date.now();
+  this.started = true;
+};
+
 Game.prototype.summary = function() {
 	return this.teams.map(function (team) {
-		return { 
+		return {
 			name: team.name,
 			score: team.score
 		};
 	});
-}
-
-Game.prototype.restart = function() {
-  this.teams.forEach(function (team) {
-    team.score = 0;
-  });
 };
 
 module.exports = Game;
